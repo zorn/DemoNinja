@@ -14,6 +14,10 @@
 		1A12C45A1CAD6F2D00E9D512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A12C4581CAD6F2D00E9D512 /* LaunchScreen.storyboard */; };
 		1A12C4651CAD6F2D00E9D512 /* DemoNinjaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A12C4641CAD6F2D00E9D512 /* DemoNinjaTests.swift */; };
 		1A12C4701CAD6F2D00E9D512 /* DemoNinjaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A12C46F1CAD6F2D00E9D512 /* DemoNinjaUITests.swift */; };
+		1A2D20041CAD70740058CE29 /* Script.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20031CAD70740058CE29 /* Script.swift */; };
+		1A2D20061CAD709B0058CE29 /* ScriptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20051CAD709B0058CE29 /* ScriptTests.swift */; };
+		1A2D20081CAD719B0058CE29 /* ScriptSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20071CAD719B0058CE29 /* ScriptSection.swift */; };
+		1A2D200A1CAD71C00058CE29 /* ScriptSectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20091CAD71C00058CE29 /* ScriptSectionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		1A12C46B1CAD6F2D00E9D512 /* DemoNinjaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoNinjaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A12C46F1CAD6F2D00E9D512 /* DemoNinjaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoNinjaUITests.swift; sourceTree = "<group>"; };
 		1A12C4711CAD6F2D00E9D512 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A2D20031CAD70740058CE29 /* Script.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
+		1A2D20051CAD709B0058CE29 /* ScriptTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptTests.swift; sourceTree = "<group>"; };
+		1A2D20071CAD719B0058CE29 /* ScriptSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptSection.swift; sourceTree = "<group>"; };
+		1A2D20091CAD71C00058CE29 /* ScriptSectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptSectionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,7 @@
 		1A12C44E1CAD6F2D00E9D512 /* DemoNinja */ = {
 			isa = PBXGroup;
 			children = (
+				1A2D20021CAD70670058CE29 /* Models */,
 				1A12C44F1CAD6F2D00E9D512 /* AppDelegate.swift */,
 				1A12C4511CAD6F2D00E9D512 /* ViewController.swift */,
 				1A12C4531CAD6F2D00E9D512 /* Main.storyboard */,
@@ -112,6 +121,8 @@
 			children = (
 				1A12C4641CAD6F2D00E9D512 /* DemoNinjaTests.swift */,
 				1A12C4661CAD6F2D00E9D512 /* Info.plist */,
+				1A2D20051CAD709B0058CE29 /* ScriptTests.swift */,
+				1A2D20091CAD71C00058CE29 /* ScriptSectionTests.swift */,
 			);
 			path = DemoNinjaTests;
 			sourceTree = "<group>";
@@ -123,6 +134,15 @@
 				1A12C4711CAD6F2D00E9D512 /* Info.plist */,
 			);
 			path = DemoNinjaUITests;
+			sourceTree = "<group>";
+		};
+		1A2D20021CAD70670058CE29 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A2D20031CAD70740058CE29 /* Script.swift */,
+				1A2D20071CAD719B0058CE29 /* ScriptSection.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A2D20041CAD70740058CE29 /* Script.swift in Sources */,
+				1A2D20081CAD719B0058CE29 /* ScriptSection.swift in Sources */,
 				1A12C4521CAD6F2D00E9D512 /* ViewController.swift in Sources */,
 				1A12C4501CAD6F2D00E9D512 /* AppDelegate.swift in Sources */,
 			);
@@ -266,6 +288,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A12C4651CAD6F2D00E9D512 /* DemoNinjaTests.swift in Sources */,
+				1A2D20061CAD709B0058CE29 /* ScriptTests.swift in Sources */,
+				1A2D200A1CAD71C00058CE29 /* ScriptSectionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +508,7 @@
 				1A12C4761CAD6F2D00E9D512 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A12C4771CAD6F2D00E9D512 /* Build configuration list for PBXNativeTarget "DemoNinjaTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +517,7 @@
 				1A12C4791CAD6F2D00E9D512 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A12C47A1CAD6F2D00E9D512 /* Build configuration list for PBXNativeTarget "DemoNinjaUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +526,7 @@
 				1A12C47C1CAD6F2D00E9D512 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
