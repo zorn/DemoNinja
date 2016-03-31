@@ -20,6 +20,8 @@
 		1A2D200A1CAD71C00058CE29 /* ScriptSectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20091CAD71C00058CE29 /* ScriptSectionTests.swift */; };
 		1A2D200D1CAD96C60058CE29 /* ScriptRunnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D200C1CAD96C60058CE29 /* ScriptRunnerViewController.swift */; };
 		1A2D200F1CAD99A40058CE29 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D200E1CAD99A40058CE29 /* Storyboards.swift */; };
+		1A2D20141CAD9FCA0058CE29 /* DemoScriptStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20131CAD9FCA0058CE29 /* DemoScriptStore.swift */; };
+		1A2D20161CADA2CF0058CE29 /* ScriptPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20151CADA2CF0058CE29 /* ScriptPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		1A2D20091CAD71C00058CE29 /* ScriptSectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptSectionTests.swift; sourceTree = "<group>"; };
 		1A2D200C1CAD96C60058CE29 /* ScriptRunnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptRunnerViewController.swift; sourceTree = "<group>"; };
 		1A2D200E1CAD99A40058CE29 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		1A2D20131CAD9FCA0058CE29 /* DemoScriptStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoScriptStore.swift; sourceTree = "<group>"; };
+		1A2D20151CADA2CF0058CE29 /* ScriptPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 			children = (
 				1A2D200E1CAD99A40058CE29 /* Storyboards.swift */,
 				1A2D20111CAD9A430058CE29 /* Screens */,
+				1A2D20121CAD9FB80058CE29 /* Stores */,
 				1A2D20021CAD70670058CE29 /* Models */,
 				1A12C44F1CAD6F2D00E9D512 /* AppDelegate.swift */,
 				1A12C4531CAD6F2D00E9D512 /* Main.storyboard */,
@@ -146,6 +151,7 @@
 			children = (
 				1A2D20031CAD70740058CE29 /* Script.swift */,
 				1A2D20071CAD719B0058CE29 /* ScriptSection.swift */,
+				1A2D20151CADA2CF0058CE29 /* ScriptPlayer.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -173,6 +179,14 @@
 				1A2D200B1CAD96A60058CE29 /* Script Runner */,
 			);
 			name = Screens;
+			sourceTree = "<group>";
+		};
+		1A2D20121CAD9FB80058CE29 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				1A2D20131CAD9FCA0058CE29 /* DemoScriptStore.swift */,
+			);
+			name = Stores;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,12 +320,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A2D20141CAD9FCA0058CE29 /* DemoScriptStore.swift in Sources */,
 				1A2D200F1CAD99A40058CE29 /* Storyboards.swift in Sources */,
 				1A2D20041CAD70740058CE29 /* Script.swift in Sources */,
 				1A2D20081CAD719B0058CE29 /* ScriptSection.swift in Sources */,
 				1A12C4521CAD6F2D00E9D512 /* MainMenuViewController.swift in Sources */,
 				1A12C4501CAD6F2D00E9D512 /* AppDelegate.swift in Sources */,
 				1A2D200D1CAD96C60058CE29 /* ScriptRunnerViewController.swift in Sources */,
+				1A2D20161CADA2CF0058CE29 /* ScriptPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

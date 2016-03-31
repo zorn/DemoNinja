@@ -11,6 +11,7 @@ class MainMenuViewController: UIViewController {
         let navigation = storyboard!.instantiate(controller: identifier, ofType: UINavigationController.self)
         let scriptRunnerVC = navigation.topViewController as! ScriptRunnerViewController
         scriptRunnerVC.presentationDelegate = self
+        scriptRunnerVC.script = DemoScriptStore.simpleDemoScript
         presentViewController(navigation, animated: true, completion: nil)
     }
 
