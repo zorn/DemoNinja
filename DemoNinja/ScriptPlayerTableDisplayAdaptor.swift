@@ -13,9 +13,20 @@ class ScriptPlayerTableDisplayAdaptor: NSObject, UITableViewDataSource, UITableV
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ScriptStepCell", forIndexPath: indexPath)
-        cell.textLabel?.text = "Section \(indexPath.section) Row \(indexPath.row)"
+        let cell = tableView.dequeueReusableCellWithIdentifier("ScriptStepCell", forIndexPath: indexPath) as! ScriptSectionTableViewCell
+        
+        let dynamicLabelString = "Section \(indexPath.section) Row \(indexPath.row)"
+        var fullString = ""
+        for _ in 0...indexPath.row {
+            fullString += dynamicLabelString
+        }
+        
+        cell.stepDescriptionLabel?.text = fullString
         return cell
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.player.currentScriptSection.title
     }
 
 }

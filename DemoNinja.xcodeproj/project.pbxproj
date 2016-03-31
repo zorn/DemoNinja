@@ -23,6 +23,7 @@
 		1A2D20141CAD9FCA0058CE29 /* DemoScriptStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20131CAD9FCA0058CE29 /* DemoScriptStore.swift */; };
 		1A2D20161CADA2CF0058CE29 /* ScriptPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20151CADA2CF0058CE29 /* ScriptPlayer.swift */; };
 		1AF77C2C1CADB4D60015CCA0 /* ScriptPlayerTableDisplayAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF77C2B1CADB4D60015CCA0 /* ScriptPlayerTableDisplayAdaptor.swift */; };
+		1AF77C2E1CADC4650015CCA0 /* ScriptSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF77C2D1CADC4650015CCA0 /* ScriptSectionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		1A2D20131CAD9FCA0058CE29 /* DemoScriptStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoScriptStore.swift; sourceTree = "<group>"; };
 		1A2D20151CADA2CF0058CE29 /* ScriptPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptPlayer.swift; sourceTree = "<group>"; };
 		1AF77C2B1CADB4D60015CCA0 /* ScriptPlayerTableDisplayAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptPlayerTableDisplayAdaptor.swift; sourceTree = "<group>"; };
+		1AF77C2D1CADC4650015CCA0 /* ScriptSectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptSectionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			children = (
 				1A2D200C1CAD96C60058CE29 /* ScriptRunnerViewController.swift */,
 				1AF77C2B1CADB4D60015CCA0 /* ScriptPlayerTableDisplayAdaptor.swift */,
+				1AF77C2D1CADC4650015CCA0 /* ScriptSectionTableViewCell.swift */,
 			);
 			name = "Script Runner";
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AF77C2E1CADC4650015CCA0 /* ScriptSectionTableViewCell.swift in Sources */,
 				1A2D20141CAD9FCA0058CE29 /* DemoScriptStore.swift in Sources */,
 				1A2D200F1CAD99A40058CE29 /* Storyboards.swift in Sources */,
 				1A2D20041CAD70740058CE29 /* Script.swift in Sources */,

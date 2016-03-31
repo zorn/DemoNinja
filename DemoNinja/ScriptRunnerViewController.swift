@@ -12,10 +12,13 @@ class ScriptRunnerViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let script = self.script {
+            title = script.title
             scriptPlayer = ScriptPlayer(script: script)
             scriptPlayerTableDisplayAdaptor = ScriptPlayerTableDisplayAdaptor(player: scriptPlayer!)
-            self.tableView?.dataSource = scriptPlayerTableDisplayAdaptor
-            self.tableView?.delegate = scriptPlayerTableDisplayAdaptor
+            tableView?.dataSource = scriptPlayerTableDisplayAdaptor
+            tableView?.delegate = scriptPlayerTableDisplayAdaptor
+            tableView?.rowHeight = UITableViewAutomaticDimension
+            tableView?.estimatedRowHeight = 75.0
         }
     }
     
