@@ -22,6 +22,7 @@
 		1A2D200F1CAD99A40058CE29 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D200E1CAD99A40058CE29 /* Storyboards.swift */; };
 		1A2D20141CAD9FCA0058CE29 /* DemoScriptStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20131CAD9FCA0058CE29 /* DemoScriptStore.swift */; };
 		1A2D20161CADA2CF0058CE29 /* ScriptPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20151CADA2CF0058CE29 /* ScriptPlayer.swift */; };
+		1AF77C2C1CADB4D60015CCA0 /* ScriptPlayerTableDisplayAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF77C2B1CADB4D60015CCA0 /* ScriptPlayerTableDisplayAdaptor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		1A2D200E1CAD99A40058CE29 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		1A2D20131CAD9FCA0058CE29 /* DemoScriptStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoScriptStore.swift; sourceTree = "<group>"; };
 		1A2D20151CADA2CF0058CE29 /* ScriptPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptPlayer.swift; sourceTree = "<group>"; };
+		1AF77C2B1CADB4D60015CCA0 /* ScriptPlayerTableDisplayAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptPlayerTableDisplayAdaptor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,9 +151,9 @@
 		1A2D20021CAD70670058CE29 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1A2D20151CADA2CF0058CE29 /* ScriptPlayer.swift */,
 				1A2D20031CAD70740058CE29 /* Script.swift */,
 				1A2D20071CAD719B0058CE29 /* ScriptSection.swift */,
-				1A2D20151CADA2CF0058CE29 /* ScriptPlayer.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				1A2D200C1CAD96C60058CE29 /* ScriptRunnerViewController.swift */,
+				1AF77C2B1CADB4D60015CCA0 /* ScriptPlayerTableDisplayAdaptor.swift */,
 			);
 			name = "Script Runner";
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				1A12C4521CAD6F2D00E9D512 /* MainMenuViewController.swift in Sources */,
 				1A12C4501CAD6F2D00E9D512 /* AppDelegate.swift in Sources */,
 				1A2D200D1CAD96C60058CE29 /* ScriptRunnerViewController.swift in Sources */,
+				1AF77C2C1CADB4D60015CCA0 /* ScriptPlayerTableDisplayAdaptor.swift in Sources */,
 				1A2D20161CADA2CF0058CE29 /* ScriptPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
