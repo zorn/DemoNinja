@@ -9,3 +9,8 @@ DemoNinja is a iPad app that helps display the next steps of a demo in large, ea
 ## Links
 
 https://trello.com/b/BiM1sKjU/demoninja
+
+## Similar Markdown Friendly Tools
+
+* http://remarkjs.com
+* http://www.decksetapp.com/
