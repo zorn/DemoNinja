@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenuViewController" id="BYZ-38-t0r" customClass="MainMenuViewController" customModule="DemoNinja" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,102 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DemoNinja" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEt-hG-Hia">
+                                <rect key="frame" x="212" y="234" width="176" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7q-bd-1t3">
+                                <rect key="frame" x="213" y="327" width="174" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                <state key="normal" title="Start Sample Script">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startSampleScript:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ENL-Fc-zMz"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yEt-hG-Hia" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5tO-sl-vK8"/>
+                            <constraint firstItem="z7q-bd-1t3" firstAttribute="top" secondItem="yEt-hG-Hia" secondAttribute="bottom" constant="50" id="WIW-JD-WO1"/>
+                            <constraint firstItem="z7q-bd-1t3" firstAttribute="centerX" secondItem="yEt-hG-Hia" secondAttribute="centerX" id="bkN-Ff-VID"/>
+                            <constraint firstItem="yEt-hG-Hia" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-44.5" id="j0G-QY-BZs"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="340" y="259"/>
+        </scene>
+        <!--Script Runner View Controller-->
+        <scene sceneID="kea-lN-Bb0">
+            <objects>
+                <viewController storyboardIdentifier="ScriptRunnerViewController" id="szc-I1-MLk" customClass="ScriptRunnerViewController" customModule="DemoNinja" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LBw-5C-ecm"/>
+                        <viewControllerLayoutGuide type="bottom" id="vJh-d7-8Re"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QBT-3D-PBZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sY1-fv-onU">
+                                <rect key="frame" x="0.0" y="64" width="600" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="iut-9u-a7V"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tAV-OF-Y9e">
+                                <rect key="frame" x="0.0" y="114" width="600" height="486"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sY1-fv-onU" secondAttribute="trailing" id="1QV-Hz-6q1"/>
+                            <constraint firstItem="tAV-OF-Y9e" firstAttribute="leading" secondItem="QBT-3D-PBZ" secondAttribute="leading" id="89S-Ey-hVw"/>
+                            <constraint firstItem="vJh-d7-8Re" firstAttribute="top" secondItem="tAV-OF-Y9e" secondAttribute="bottom" id="AWf-Sy-fc3"/>
+                            <constraint firstItem="tAV-OF-Y9e" firstAttribute="top" secondItem="sY1-fv-onU" secondAttribute="bottom" id="DT5-qT-iuh"/>
+                            <constraint firstItem="sY1-fv-onU" firstAttribute="leading" secondItem="QBT-3D-PBZ" secondAttribute="leading" id="eSh-p8-eQk"/>
+                            <constraint firstAttribute="trailing" secondItem="tAV-OF-Y9e" secondAttribute="trailing" id="hSc-0k-1ao"/>
+                            <constraint firstItem="sY1-fv-onU" firstAttribute="top" secondItem="LBw-5C-ecm" secondAttribute="bottom" id="hbV-b7-Zhh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TL2-i1-hlC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Ln2-zd-LQh">
+                            <connections>
+                                <action selector="doneScript:" destination="szc-I1-MLk" id="KuH-hP-zGk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qVL-aU-iaa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="917"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0Ue-Hi-ulA">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationOfScriptRunnerViewController" automaticallyAdjustsScrollViewInsets="NO" id="Ilf-R5-JDZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DSg-ks-clo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="szc-I1-MLk" kind="relationship" relationship="rootViewController" id="q4v-2x-9qQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u3W-m6-X08" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-362" y="917"/>
         </scene>
     </scenes>
 </document>
