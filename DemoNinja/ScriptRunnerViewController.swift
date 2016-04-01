@@ -14,16 +14,19 @@ class ScriptRunnerViewController : UIViewController {
         if let script = self.script {
             title = script.title
             scriptPlayer = ScriptPlayer(script: script)
-            scriptPlayerTableDisplayAdaptor = ScriptPlayerTableDisplayAdaptor(player: scriptPlayer!)
+            scriptPlayerTableDisplayAdaptor = ScriptPlayerTableDisplayAdaptor(player: scriptPlayer!, tableView: tableView!)
             tableView?.dataSource = scriptPlayerTableDisplayAdaptor
             tableView?.delegate = scriptPlayerTableDisplayAdaptor
             tableView?.rowHeight = UITableViewAutomaticDimension
             tableView?.estimatedRowHeight = 75.0
+            tableView?.separatorStyle = .None
         }
     }
     
     @IBAction func doneScript(sender: UIBarButtonItem) {
         presentationDelegate?.dismissRequestFromViewController(self)
     }
+    
+    
     
 }
