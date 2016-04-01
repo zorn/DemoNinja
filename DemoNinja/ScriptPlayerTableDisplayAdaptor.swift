@@ -32,13 +32,13 @@ class ScriptPlayerTableDisplayAdaptor: NSObject, UITableViewDataSource, UITableV
         
         cell.stepDescriptionLabel?.text = player.currentScriptSection.steps[indexPath.row]
         
-        if indexPath.row == player.currentStepIndex {
+        if indexPath.row == player.stepIndex && !player.atEnd {
             cell.contentView.backgroundColor = UIColor(hex: 0x97FBA8)
         } else {
             cell.contentView.backgroundColor = UIColor.whiteColor()
         }
         
-        if indexPath.row >= player.currentStepIndex {
+        if indexPath.row >= player.stepIndex && !player.atEnd {
             cell.doneButton?.setTitle("O", forState: .Normal)
             cell.doneButton?.enabled = true
             cell.doneButton?.alpha = 1.0
@@ -67,20 +67,42 @@ class ScriptPlayerTableDisplayAdaptor: NSObject, UITableViewDataSource, UITableV
 
 extension ScriptPlayerTableDisplayAdaptor: ScriptSectionTableViewCellDelegate {
     func buttonPressedFromCell(cell: UITableViewCell) {
+        
         if let indexPath = tableView?.indexPathForCell(cell) {
             
-            var pathsToReload = [NSIndexPath]()
-            for i in player.currentStepIndex...indexPath.row+1 {
-                let newPath = NSIndexPath(forRow: i, inSection: indexPath.section)
-                print("adding path section: \(newPath.section) row:\(newPath.row)")
-                pathsToReload.append(newPath)
-            }
+            let count = indexPath.row - player.stepIndex + 1
+            player.incrementStep(count)
+            tableView?.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Fade)
             
-            player.currentStepIndex = indexPath.row + 1
-            tableView?.reloadRowsAtIndexPaths(pathsToReload, withRowAnimation:.Fade)
-            //let newTopPath = NSIndexPath(forRow: indexPath.row+1, inSection: indexPath.section)
-            tableView?.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+//            tableView?.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+            
         }
+        
+        
+//        if let indexPath = tableView?.indexPathForCell(cell) {
+//            
+//            var pathsToReload = [NSIndexPath]()
+//            for i in player.stepIndex...indexPath.row+1 {
+//                let newPath = NSIndexPath(forRow: i, inSection: indexPath.section)
+//                print("adding path section: \(newPath.section) row:\(newPath.row)")
+//                pathsToReload.append(newPath)
+//            }
+//            
+//            player.incrementStep(indexPath.row + 1)
+//            
+//            if (player.stepIndex >= player.currentScriptSection.steps.count) {
+//                
+//            } else {
+//                tableView?.reloadRowsAtIndexPaths(pathsToReload, withRowAnimation:.Fade)
+//                tableView?.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+//            }
+//            
+//            
+//        }
+    }
+    
+    func progressPlayerWithCommitmentAtIndexPath(indexPath: NSIndexPath) {
+        
     }
 }
 

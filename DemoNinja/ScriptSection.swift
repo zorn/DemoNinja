@@ -1,6 +1,6 @@
 import Foundation
 
-struct ScriptSection {
+struct ScriptSection: Equatable {
     
     let title: String
     let steps: [String]
@@ -10,4 +10,11 @@ struct ScriptSection {
         self.steps = steps
     }
     
+}
+
+func ==(lhs: ScriptSection, rhs: ScriptSection) -> Bool {
+    return (
+        lhs.title == rhs.title &&
+        lhs.steps == rhs.steps
+    )
 }
