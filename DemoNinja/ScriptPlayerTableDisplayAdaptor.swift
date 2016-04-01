@@ -37,6 +37,21 @@ class ScriptPlayerTableDisplayAdaptor: NSObject, UITableViewDataSource, UITableV
         }
         
         cell.stepDescriptionLabel?.text = fullString
+        
+        if indexPath.row >= player.currentStepIndex {
+            cell.doneButton?.setTitle("O", forState: .Normal)
+            cell.doneButton?.enabled = true
+            cell.doneButton?.alpha = 1.0
+            cell.stepDescriptionLabel?.alpha = 1.0
+
+        } else {
+            cell.doneButton?.setTitle("X", forState: .Normal)
+            cell.doneButton?.enabled = false
+            cell.doneButton?.alpha = 0.3
+            cell.stepDescriptionLabel?.alpha = 0.3
+        }
+        
+        cell.delegate = self
         return cell
     }
     
@@ -47,11 +62,25 @@ class ScriptPlayerTableDisplayAdaptor: NSObject, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         return nil
     }
-    
-    
 
 }
 
+extension ScriptPlayerTableDisplayAdaptor: ScriptSectionTableViewCellDelegate {
+    func buttonPressedFromCell(cell: UITableViewCell) {
+        if let indexPath = tableView?.indexPathForCell(cell) {
+            
+            var pathsToReload = [NSIndexPath]()
+            for i in player.currentStepIndex...indexPath.row {
+                let newPath = NSIndexPath(forRow: i, inSection: indexPath.section)
+                print("adding path section: \(newPath.section) row:\(newPath.row)")
+                pathsToReload.append(newPath)
+            }
+            
+            player.currentStepIndex = indexPath.row + 1
+            tableView?.reloadRowsAtIndexPaths(pathsToReload, withRowAnimation:.Fade)
+        }
+    }
+}
 
 // Empty Row Calculations
 extension ScriptPlayerTableDisplayAdaptor {
