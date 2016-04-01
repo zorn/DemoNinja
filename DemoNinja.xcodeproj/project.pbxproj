@@ -22,6 +22,9 @@
 		1A2D200F1CAD99A40058CE29 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D200E1CAD99A40058CE29 /* Storyboards.swift */; };
 		1A2D20141CAD9FCA0058CE29 /* DemoScriptStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20131CAD9FCA0058CE29 /* DemoScriptStore.swift */; };
 		1A2D20161CADA2CF0058CE29 /* ScriptPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D20151CADA2CF0058CE29 /* ScriptPlayer.swift */; };
+		1A8728571CADFB4D00D22602 /* NibInstantiation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8728561CADFB4D00D22602 /* NibInstantiation.swift */; };
+		1A8D41BE1CADF7B50006FE4B /* ScriptSectionStepView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A8D41BD1CADF7B50006FE4B /* ScriptSectionStepView.xib */; };
+		1A8D41C01CADF92D0006FE4B /* ScriptSectionStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8D41BF1CADF92D0006FE4B /* ScriptSectionStepView.swift */; };
 		1AF77C2C1CADB4D60015CCA0 /* ScriptPlayerTableDisplayAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF77C2B1CADB4D60015CCA0 /* ScriptPlayerTableDisplayAdaptor.swift */; };
 		1AF77C2E1CADC4650015CCA0 /* ScriptSectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF77C2D1CADC4650015CCA0 /* ScriptSectionTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +68,9 @@
 		1A2D200E1CAD99A40058CE29 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		1A2D20131CAD9FCA0058CE29 /* DemoScriptStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoScriptStore.swift; sourceTree = "<group>"; };
 		1A2D20151CADA2CF0058CE29 /* ScriptPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptPlayer.swift; sourceTree = "<group>"; };
+		1A8728561CADFB4D00D22602 /* NibInstantiation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibInstantiation.swift; sourceTree = "<group>"; };
+		1A8D41BD1CADF7B50006FE4B /* ScriptSectionStepView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScriptSectionStepView.xib; sourceTree = "<group>"; };
+		1A8D41BF1CADF92D0006FE4B /* ScriptSectionStepView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptSectionStepView.swift; sourceTree = "<group>"; };
 		1AF77C2B1CADB4D60015CCA0 /* ScriptPlayerTableDisplayAdaptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptPlayerTableDisplayAdaptor.swift; sourceTree = "<group>"; };
 		1AF77C2D1CADC4650015CCA0 /* ScriptSectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptSectionTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +123,7 @@
 		1A12C44E1CAD6F2D00E9D512 /* DemoNinja */ = {
 			isa = PBXGroup;
 			children = (
+				1A8728561CADFB4D00D22602 /* NibInstantiation.swift */,
 				1A2D200E1CAD99A40058CE29 /* Storyboards.swift */,
 				1A2D20111CAD9A430058CE29 /* Screens */,
 				1A2D20121CAD9FB80058CE29 /* Stores */,
@@ -166,6 +173,8 @@
 				1A2D200C1CAD96C60058CE29 /* ScriptRunnerViewController.swift */,
 				1AF77C2B1CADB4D60015CCA0 /* ScriptPlayerTableDisplayAdaptor.swift */,
 				1AF77C2D1CADC4650015CCA0 /* ScriptSectionTableViewCell.swift */,
+				1A8D41BD1CADF7B50006FE4B /* ScriptSectionStepView.xib */,
+				1A8D41BF1CADF92D0006FE4B /* ScriptSectionStepView.swift */,
 			);
 			name = "Script Runner";
 			sourceTree = "<group>";
@@ -302,6 +311,7 @@
 				1A12C45A1CAD6F2D00E9D512 /* LaunchScreen.storyboard in Resources */,
 				1A12C4571CAD6F2D00E9D512 /* Assets.xcassets in Resources */,
 				1A12C4551CAD6F2D00E9D512 /* Main.storyboard in Resources */,
+				1A8D41BE1CADF7B50006FE4B /* ScriptSectionStepView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,10 +342,12 @@
 				1A2D20041CAD70740058CE29 /* Script.swift in Sources */,
 				1A2D20081CAD719B0058CE29 /* ScriptSection.swift in Sources */,
 				1A12C4521CAD6F2D00E9D512 /* MainMenuViewController.swift in Sources */,
+				1A8D41C01CADF92D0006FE4B /* ScriptSectionStepView.swift in Sources */,
 				1A12C4501CAD6F2D00E9D512 /* AppDelegate.swift in Sources */,
 				1A2D200D1CAD96C60058CE29 /* ScriptRunnerViewController.swift in Sources */,
 				1AF77C2C1CADB4D60015CCA0 /* ScriptPlayerTableDisplayAdaptor.swift in Sources */,
 				1A2D20161CADA2CF0058CE29 /* ScriptPlayer.swift in Sources */,
+				1A8728571CADFB4D00D22602 /* NibInstantiation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

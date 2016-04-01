@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Main Menu View Controller-->
@@ -68,57 +67,19 @@
                                     <constraint firstAttribute="height" constant="50" id="iut-9u-a7V"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tAV-OF-Y9e">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Kn5-7h-oht">
                                 <rect key="frame" x="0.0" y="114" width="600" height="486"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScriptStepCell" rowHeight="75" id="CFu-LD-PeJ" customClass="ScriptSectionTableViewCell" customModule="DemoNinja" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="75"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CFu-LD-PeJ" id="zpE-6a-zk4">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="74.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTe-iJ-qtS">
-                                                    <rect key="frame" x="20" y="14" width="44" height="44"/>
-                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="QSY-po-iDj"/>
-                                                        <constraint firstAttribute="width" constant="44" id="cj0-Ak-NS3"/>
-                                                    </constraints>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyo-Xw-NFk">
-                                                    <rect key="frame" x="72" y="8" width="508" height="58"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="wyo-Xw-NFk" secondAttribute="bottom" id="Mme-BJ-y62"/>
-                                                <constraint firstItem="aTe-iJ-qtS" firstAttribute="top" secondItem="zpE-6a-zk4" secondAttribute="topMargin" constant="6" id="d7H-eh-1GZ"/>
-                                                <constraint firstItem="wyo-Xw-NFk" firstAttribute="top" secondItem="zpE-6a-zk4" secondAttribute="topMargin" id="kOL-bM-CzZ"/>
-                                                <constraint firstItem="aTe-iJ-qtS" firstAttribute="leading" secondItem="zpE-6a-zk4" secondAttribute="leadingMargin" constant="12" id="lv0-nP-pkQ"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="wyo-Xw-NFk" secondAttribute="trailing" constant="12" id="msz-CE-1lx"/>
-                                                <constraint firstItem="wyo-Xw-NFk" firstAttribute="leading" secondItem="aTe-iJ-qtS" secondAttribute="trailing" constant="8" id="uc2-T2-odG"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="stepDescriptionLabel" destination="wyo-Xw-NFk" id="yJx-rR-6Eo"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="sY1-fv-onU" secondAttribute="trailing" id="1QV-Hz-6q1"/>
-                            <constraint firstItem="tAV-OF-Y9e" firstAttribute="leading" secondItem="QBT-3D-PBZ" secondAttribute="leading" id="89S-Ey-hVw"/>
-                            <constraint firstItem="vJh-d7-8Re" firstAttribute="top" secondItem="tAV-OF-Y9e" secondAttribute="bottom" id="AWf-Sy-fc3"/>
-                            <constraint firstItem="tAV-OF-Y9e" firstAttribute="top" secondItem="sY1-fv-onU" secondAttribute="bottom" id="DT5-qT-iuh"/>
+                            <constraint firstItem="Kn5-7h-oht" firstAttribute="leading" secondItem="QBT-3D-PBZ" secondAttribute="leading" id="J4P-4f-Fmi"/>
+                            <constraint firstItem="Kn5-7h-oht" firstAttribute="top" secondItem="sY1-fv-onU" secondAttribute="bottom" id="eQi-UH-Dn3"/>
                             <constraint firstItem="sY1-fv-onU" firstAttribute="leading" secondItem="QBT-3D-PBZ" secondAttribute="leading" id="eSh-p8-eQk"/>
-                            <constraint firstAttribute="trailing" secondItem="tAV-OF-Y9e" secondAttribute="trailing" id="hSc-0k-1ao"/>
                             <constraint firstItem="sY1-fv-onU" firstAttribute="top" secondItem="LBw-5C-ecm" secondAttribute="bottom" id="hbV-b7-Zhh"/>
+                            <constraint firstItem="vJh-d7-8Re" firstAttribute="top" secondItem="Kn5-7h-oht" secondAttribute="bottom" id="krB-od-K1o"/>
+                            <constraint firstAttribute="trailing" secondItem="Kn5-7h-oht" secondAttribute="trailing" id="zRp-0i-FRe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TL2-i1-hlC">
@@ -129,7 +90,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="tAV-OF-Y9e" id="mYJ-Bo-97Y"/>
+                        <outlet property="stackView" destination="Kn5-7h-oht" id="RM7-xU-fnY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVL-aU-iaa" userLabel="First Responder" sceneMemberID="firstResponder"/>
