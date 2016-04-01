@@ -17,7 +17,7 @@ class ScriptPlayerTableDisplayAdaptor: NSObject, UITableViewDataSource, UITableV
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        if indexPath.row <= player.currentScriptSection.steps.count {
+        if indexPath.row < player.currentScriptSection.steps.count {
             return buildAndConfigureScriptSectionTableViewCellForTableView(tableView, indexPath: indexPath)
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("Empty", forIndexPath: indexPath)
@@ -30,13 +30,13 @@ class ScriptPlayerTableDisplayAdaptor: NSObject, UITableViewDataSource, UITableV
     func buildAndConfigureScriptSectionTableViewCellForTableView(tableView: UITableView, indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ScriptStepCell", forIndexPath: indexPath) as! ScriptSectionTableViewCell
         
-        let dynamicLabelString = "Section \(indexPath.section) Row \(indexPath.row)"
-        var fullString = ""
-        for _ in 0...indexPath.row {
-            fullString += dynamicLabelString
-        }
+        cell.stepDescriptionLabel?.text = player.currentScriptSection.steps[indexPath.row]
         
-        cell.stepDescriptionLabel?.text = fullString
+        if indexPath.row == player.currentStepIndex {
+            cell.contentView.backgroundColor = UIColor(hex: 0x97FBA8)
+        } else {
+            cell.contentView.backgroundColor = UIColor.whiteColor()
+        }
         
         if indexPath.row >= player.currentStepIndex {
             cell.doneButton?.setTitle("O", forState: .Normal)
@@ -70,7 +70,7 @@ extension ScriptPlayerTableDisplayAdaptor: ScriptSectionTableViewCellDelegate {
         if let indexPath = tableView?.indexPathForCell(cell) {
             
             var pathsToReload = [NSIndexPath]()
-            for i in player.currentStepIndex...indexPath.row {
+            for i in player.currentStepIndex...indexPath.row+1 {
                 let newPath = NSIndexPath(forRow: i, inSection: indexPath.section)
                 print("adding path section: \(newPath.section) row:\(newPath.row)")
                 pathsToReload.append(newPath)
@@ -78,6 +78,8 @@ extension ScriptPlayerTableDisplayAdaptor: ScriptSectionTableViewCellDelegate {
             
             player.currentStepIndex = indexPath.row + 1
             tableView?.reloadRowsAtIndexPaths(pathsToReload, withRowAnimation:.Fade)
+            //let newTopPath = NSIndexPath(forRow: indexPath.row+1, inSection: indexPath.section)
+            tableView?.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
         }
     }
 }

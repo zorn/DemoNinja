@@ -20,6 +20,7 @@ class ScriptRunnerViewController : UIViewController {
             tableView?.rowHeight = UITableViewAutomaticDimension
             tableView?.estimatedRowHeight = 75.0
             tableView?.separatorStyle = .None
+            tableView?.scrollEnabled = false
         }
     }
     
