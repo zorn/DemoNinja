@@ -62,6 +62,14 @@ class ScriptPlayerTableDisplayAdaptor: NSObject, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         return nil
     }
+    
+    func currentScrollPosition() -> NSIndexPath {
+        if player.stepIndex == 0 {
+            return NSIndexPath(forRow: 0, inSection: 0)
+        } else {
+            return NSIndexPath(forRow: player.stepIndex-1, inSection: 0)
+        }
+    }
 
 }
 
@@ -72,16 +80,11 @@ extension ScriptPlayerTableDisplayAdaptor: ScriptSectionTableViewCellDelegate {
             
             let count = indexPath.row - player.stepIndex + 1
             
-            let previousSectionIndex = player.sectionIndex
             player.incrementStep(count)
             tableView?.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Fade)
             
-            if previousSectionIndex != player.sectionIndex {
-                let topPath = NSIndexPath(forRow: 0, inSection: 0)
-                tableView?.scrollToRowAtIndexPath(topPath, atScrollPosition: .Top, animated: true)
-            } else {
-                tableView?.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
-            }
+            let topPath = currentScrollPosition()
+            tableView?.scrollToRowAtIndexPath(topPath, atScrollPosition: .Top, animated: true)
             
         }
         

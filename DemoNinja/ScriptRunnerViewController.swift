@@ -2,6 +2,8 @@ import UIKit
 
 class ScriptRunnerViewController : UIViewController {
     
+    @IBOutlet var progressBaseView: UIView!
+
     @IBOutlet var tableView: UITableView?
     
     @IBOutlet var doneViewTrailingConstraint: NSLayoutConstraint!
@@ -32,6 +34,9 @@ class ScriptRunnerViewController : UIViewController {
             
             progressDidChangeForScript(script)
         }
+        
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(ScriptRunnerViewController.progressBarTapped(_:)))
+        progressBaseView.addGestureRecognizer(tapGR)
     }
     
     @IBAction func doneScript(sender: UIBarButtonItem) {
@@ -74,6 +79,15 @@ class ScriptRunnerViewController : UIViewController {
         view.layoutIfNeeded()
     }
     
+    func progressBarTapped(gesture: UITapGestureRecognizer) {
+        
+        scriptPlayer!.decrementStep(1)
+        progressDidChangeForScript(script!)
+        tableView?.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Fade)
+        
+        let topPath = scriptPlayerTableDisplayAdaptor!.currentScrollPosition()
+        tableView?.scrollToRowAtIndexPath(topPath, atScrollPosition: .Top, animated: true)
+    }
 }
 
 extension ScriptRunnerViewController: ScriptPlayerDelegate {

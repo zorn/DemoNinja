@@ -32,6 +32,11 @@ public class ScriptPlayer {
             return sectionIndex >= script.sections.count
         }
     }
+    var atStart: Bool {
+        get {
+            return sectionIndex == 0 && stepIndex == 0
+        }
+    }
     
     var numberOfCompletedSteps: Int {
         get {
@@ -64,6 +69,24 @@ public class ScriptPlayer {
                 stepsToIncrement -= stepsRemainingOnCurrentSection
                 sectionIndex += 1
                 stepIndex = 0
+            }
+        }
+        delegate?.progressDidChangeForScript(script)
+    }
+    
+    public func decrementStep(count: Int) {
+        var stepsToDecrement = count
+        // while we still have steps to remove and have not hit the start
+        while atStart == false && stepsToDecrement > 0 {
+            // test to see if we can remove steps from the current section
+            let possibleNewStepIndex = stepIndex-stepsToDecrement
+            if possibleNewStepIndex >= 0 {
+                stepIndex = possibleNewStepIndex
+                stepsToDecrement = 0
+            } else {
+                stepsToDecrement -= stepIndex
+                sectionIndex -= 1
+                stepIndex = script.sections[sectionIndex].steps.count
             }
         }
         delegate?.progressDidChangeForScript(script)
