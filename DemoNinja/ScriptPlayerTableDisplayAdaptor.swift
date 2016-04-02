@@ -71,10 +71,17 @@ extension ScriptPlayerTableDisplayAdaptor: ScriptSectionTableViewCellDelegate {
         if let indexPath = tableView?.indexPathForCell(cell) {
             
             let count = indexPath.row - player.stepIndex + 1
+            
+            let previousSectionIndex = player.sectionIndex
             player.incrementStep(count)
             tableView?.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Fade)
             
-//            tableView?.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+            if previousSectionIndex != player.sectionIndex {
+                let topPath = NSIndexPath(forRow: 0, inSection: 0)
+                tableView?.scrollToRowAtIndexPath(topPath, atScrollPosition: .Top, animated: true)
+            } else {
+                tableView?.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+            }
             
         }
         
