@@ -19,14 +19,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DemoNinja" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEt-hG-Hia">
-                                <rect key="frame" x="212" y="234" width="176" height="43"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <rect key="frame" x="137" y="171" width="326" height="82"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="68"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7q-bd-1t3">
-                                <rect key="frame" x="213" y="327" width="174" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7q-bd-1t3">
+                                <rect key="frame" x="81" y="303" width="438" height="59"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
                                 <state key="normal" title="Start Sample Script">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -35,13 +36,29 @@
                                     <action selector="startSampleScript:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ENL-Fc-zMz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8L-Mi-C2R">
+                                <rect key="frame" x="69" y="370" width="463" height="59"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="10" maxX="20" maxY="10"/>
+                                <state key="normal" title="Start Programatic View Script ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startProgramaticViewsScript:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9es-Eo-xZe"/>
+                                    <action selector="startSampleScript:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XGz-DU-uRn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="l8L-Mi-C2R" firstAttribute="width" secondItem="z7q-bd-1t3" secondAttribute="width" id="4ev-Ju-Hed"/>
                             <constraint firstItem="yEt-hG-Hia" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5tO-sl-vK8"/>
+                            <constraint firstItem="l8L-Mi-C2R" firstAttribute="centerX" secondItem="z7q-bd-1t3" secondAttribute="centerX" id="8jj-jL-AdU"/>
                             <constraint firstItem="z7q-bd-1t3" firstAttribute="top" secondItem="yEt-hG-Hia" secondAttribute="bottom" constant="50" id="WIW-JD-WO1"/>
                             <constraint firstItem="z7q-bd-1t3" firstAttribute="centerX" secondItem="yEt-hG-Hia" secondAttribute="centerX" id="bkN-Ff-VID"/>
-                            <constraint firstItem="yEt-hG-Hia" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-44.5" id="j0G-QY-BZs"/>
+                            <constraint firstItem="yEt-hG-Hia" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-88" id="j0G-QY-BZs"/>
+                            <constraint firstItem="l8L-Mi-C2R" firstAttribute="top" secondItem="z7q-bd-1t3" secondAttribute="bottom" constant="8" id="mVi-zU-2fO"/>
                         </constraints>
                     </view>
                 </viewController>
