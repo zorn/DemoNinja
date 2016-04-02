@@ -1,8 +1,13 @@
 import Foundation
 
+protocol ScriptPlayerDelegate {
+    func progressDidChangeForScript(script: Script)
+}
+
 public class ScriptPlayer {
     
     let script: Script
+    var delegate: ScriptPlayerDelegate?
     private(set) var sectionIndex: Int {
         willSet {
             
@@ -10,7 +15,7 @@ public class ScriptPlayer {
     }
     private(set) var stepIndex: Int {
         didSet {
-            print("stepIndex changed to: \(stepIndex)")
+            //print("stepIndex changed to: \(stepIndex)")
         }
     }
     var currentScriptSection: ScriptSection {
@@ -25,6 +30,18 @@ public class ScriptPlayer {
     var atEnd: Bool {
         get {
             return sectionIndex >= script.sections.count
+        }
+    }
+    
+    var numberOfCompletedSteps: Int {
+        get {
+            var total = 0
+            for index in 0..<sectionIndex {
+                total += script.sections[index].steps.count
+            }
+            total += stepIndex
+            print("numberOfCompletedSteps: \(total)")
+            return total
         }
     }
     
@@ -49,6 +66,7 @@ public class ScriptPlayer {
                 stepIndex = 0
             }
         }
+        delegate?.progressDidChangeForScript(script)
     }
 
 //    func nextScriptSection() -> ScriptSection? {

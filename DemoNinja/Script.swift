@@ -4,7 +4,15 @@ struct Script {
     
     let title: String
     let sections: [ScriptSection]
-    
+    var totalNumberOfSectionSteps: Int {
+        get {
+            var total = 0
+            for s in sections {
+                total += s.steps.count
+            }
+            return total
+        }
+    }
     /**
      Creates and returns a new Script given a title and sections.
      
@@ -18,4 +26,6 @@ struct Script {
         self.title = title
         self.sections = sections
     }
+    
+    
 }
